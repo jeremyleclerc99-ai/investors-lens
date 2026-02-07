@@ -1,0 +1,220 @@
+
+/*********************** general style **************************/
+
+:root {
+    --primary-blue: #122B45;
+    --accent-gold: #B88C3E;
+    --text-main: #1A1A1A;
+    --text-muted: #595959;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Inter";
+    font-weight: 300; 
+}
+
+h1 {
+    color: var(--primary-blue);
+    font-family: "Lora", "sans-serif";
+    font-size: 3rem;
+
+}
+
+h2 {
+    color: var(--primary-blue);
+    font-size: 2em;
+    
+}
+
+
+h4 {
+    font-family: "Lora", serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-muted); /* A softer grey than the title */
+    font-style: italic;
+    margin: -5px 0 5px 0; /* Pulls it closer to the title above */
+    line-height: 1.4;
+}
+
+
+
+.post-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.entry-text p {
+    line-height: 1.6;      /* Makes the text easier to read */
+    margin-bottom: 1.5rem; /* Adds space between paragraphs */
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+
+/*
+.lora-uniquifier {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+*/
+
+h3{
+    font-family: "Lora", serif;
+}
+
+
+/*************** home-page / tags pages **********************/
+
+/* The main container for the feed */
+
+.post-container{
+    max-width: 700px;
+}
+
+.posts-grid {
+    display: flex;
+    flex-direction: column; /* This creates the vertical alignment */
+    gap: 30px;              /* Adds space between the boxes */
+    margin-top: 20px;
+}
+
+/* Individual Post Box */
+.post-card {
+    position: relative;
+    z-index: 1;
+
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column; /* Content inside the card also stacks vertically */
+}
+
+.post-card h3 a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2; /* Makes the link cover the whole card */
+}
+
+.post-subtitle{
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-muted); /* A softer grey than the title */
+    font-style: italic;
+    margin: -5px 0 5px 0; /* Pulls it closer to the title above */
+    line-height: 1.4;
+}
+
+.post-excerpt{
+    padding-bottom: 0.5rem;
+}
+
+.post-meta{
+    color: var(--accent-gold);
+    font-size: 0.9em;
+}
+
+/* Hover effect for a professional feel */
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.post-card h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.post-card h3 a {
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+/*************** TAGS STYLING **********************/
+
+/* Container for the tags to keep them tidy */
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+    position: relative;
+    z-index: 3;
+}
+
+/* The individual tag box */
+.tag-item {
+    background-color: var(--primary-blue); 
+    color: white; 
+    padding: 4px 12px;
+    border-radius: 4px;           /* Rounded corners for a boxy pill look */
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;    /* Smooths the hover effect */
+    border: 1px solid #e0e0e0;
+    cursor: default;
+    text-decoration: none;
+}
+
+/* Subtle Hover Effect */
+.tag-item:hover {
+    background-color: var(--accent-gold);    /* Switches to your brand Gold */
+    color: #ffffff;               /* White text for contrast */
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);  /* Subtle lift effect */
+    box-shadow: 0 4px 8px rgba(184, 140, 62, 0.2); /* Soft gold shadow */
+}
+
+/*************** BLOG 1 **********************/
+
+.post-date{
+    color: var(--accent-gold);
+    font-size: 0.9em;
+}
+
+
+/*** bottom slide show ***/
+
+.series-nav {
+    background: #fafafa;
+    border-left: 4px solid var(--accent-gold);
+    padding: 20px;
+    margin: 40px 0;
+}
+
+.series-steps {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; /* Creates the "slide show" or scrollable feel */
+    padding-bottom: 10px;
+}
+
+.series-link {
+    min-width: 150px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.series-link.active {
+    background: var(--primary-blue);
+    color: white;
+    border-color: var(--primary-blue);
+}
